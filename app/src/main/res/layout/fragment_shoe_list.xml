@@ -8,14 +8,11 @@
         tools:context=".shoe_list.ShoeListFragment">
 
         <LinearLayout
+            android:id="@+id/shoe_list_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="@string/hello_blank_fragment" />
+            android:orientation="vertical"
+            android:padding="12dp">
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:id="@+id/fabShoeDetail"
