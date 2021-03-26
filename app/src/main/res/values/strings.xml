@@ -11,5 +11,11 @@
     <string name="follow_instruction">Follow the Shoe Store instruction</string>
     <string name="instruction">Instruction</string>
     <string name="shoe_list">Shoe List</string>
-    <string name="shoe_detail">shoe detail</string>
+    <string name="shoe_detail">Shoe Detail</string>
+    <string name="logout">Logout</string>
+    <string name="name">Name</string>
+    <string name="company">Company</string>
+    <string name="size">Size</string>
+    <string name="description">Description</string>
+    <string name="save">Save</string>
 </resources>
