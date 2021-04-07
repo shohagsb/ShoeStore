@@ -1,27 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <ScrollView
+    <!-- Used this ConstraintLayout to place the FAB at bottom right -->
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".shoe_list.ShoeListFragment">
+        android:layout_height="match_parent">
 
-        <LinearLayout
-            android:id="@+id/shoe_list_layout"
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="12dp">
+            android:layout_height="match_parent"
+            tools:context=".shoe_list.ShoeListFragment">
 
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/fabShoeDetail"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:id="@+id/shoe_list_layout"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="end"
-                android:contentDescription="@string/shoe_detail"
-                android:src="@drawable/ic_baseline_add_24"
-                android:tint="@android:color/white" />
-        </LinearLayout>
-    </ScrollView>
+                android:orientation="vertical"
+                android:padding="12dp" />
+        </ScrollView>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabShoeDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginEnd="12dp"
+            android:layout_marginBottom="12dp"
+            android:contentDescription="@string/shoe_detail"
+            android:src="@drawable/ic_baseline_add_24"
+            android:tint="@android:color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

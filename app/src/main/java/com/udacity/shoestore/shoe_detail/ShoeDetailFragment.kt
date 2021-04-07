@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModelProvider
@@ -34,23 +35,30 @@ class ShoeDetailFragment : Fragment() {
                 R.id.action_shoeDetailFragment_to_shoeListFragment
             )
         )
-        binding.btSave.setOnClickListener {
-            saveShoeDetail()
-        }
+
+        validateInputs()
+        binding.viewModel = viewModel
 
         return binding.root
     }
 
+    private fun validateInputs() {
+        viewModel.inputMsg.observe(viewLifecycleOwner, { errorMsg ->
+            if (errorMsg.isNullOrEmpty()) {
+                saveShoeDetail()
+            } else {
+                Toast.makeText(context, errorMsg, Toast.LENGTH_SHORT).show()
+            }
+        })
+    }
+
     private fun saveShoeDetail() {
-        val name: String = binding.etName.text.toString()
-        val size: Double = binding.etSize.text.toString().toDouble()
-        val company: String = binding.etCompany.text.toString()
-        val description: String = binding.etDescription.text.toString()
-
-        val newShoe = Shoe(name, size, company, description)
-        viewModel.addNewShoe(newShoe)
-
-        findNavController().navigate(R.id.action_shoeDetailFragment_to_shoeListFragment)
+        viewModel.dataSaved.observe(viewLifecycleOwner, {
+            if (it) {
+                findNavController().navigate(R.id.action_shoeDetailFragment_to_shoeListFragment)
+                viewModel.navigateComplete()
+            }
+        })
     }
 
 }
