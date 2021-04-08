@@ -8,13 +8,11 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import com.udacity.shoestore.R
-import com.udacity.shoestore.ShoeViewModel
+import com.udacity.shoestore.viewmodel.ShoeViewModel
 import com.udacity.shoestore.databinding.FragmentShoeDetailBinding
-import com.udacity.shoestore.models.Shoe
 
 class ShoeDetailFragment : Fragment() {
     private lateinit var binding: FragmentShoeDetailBinding

@@ -9,14 +9,14 @@
 
         <variable
             name="viewModel"
-            type="com.udacity.shoestore.ShoeViewModel" />
+            type="com.udacity.shoestore.viewmodel.ShoeViewModel" />
 
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="12dp"
+        android:padding="16dp"
         tools:context="shoe_detail.ShoeDetailFragment">
 
         <TextView
@@ -24,7 +24,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/name"
-            android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintBaseline_toBaselineOf="@+id/et_name"
             app:layout_constraintEnd_toStartOf="@+id/et_name"
@@ -50,7 +49,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/company"
-            android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintBaseline_toBaselineOf="@+id/et_company"
             app:layout_constraintEnd_toStartOf="@+id/et_company"
@@ -76,7 +74,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/size"
-            android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintBaseline_toBaselineOf="@+id/et_size"
             app:layout_constraintEnd_toStartOf="@+id/et_size"
@@ -102,7 +99,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/description"
-            android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintBaseline_toBaselineOf="@+id/et_description"
             app:layout_constraintEnd_toStartOf="@+id/et_description"

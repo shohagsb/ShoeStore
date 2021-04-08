@@ -1,4 +1,4 @@
-package com.udacity.shoestore
+package com.udacity.shoestore.viewmodel
 
 import androidx.databinding.Bindable
 import androidx.databinding.Observable
@@ -6,6 +6,7 @@ import androidx.databinding.PropertyChangeRegistry
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.udacity.shoestore.BR
 import com.udacity.shoestore.models.Shoe
 
 class ShoeViewModel : ViewModel(), Observable {
@@ -22,6 +23,7 @@ class ShoeViewModel : ViewModel(), Observable {
     val inputMsg: LiveData<String?>
         get() = _inputMsg
 
+    // Dummy Shoe Info
     private val shoeListDummy = mutableListOf(
         Shoe(
             "STAN SMITH SHOES",
@@ -43,7 +45,7 @@ class ShoeViewModel : ViewModel(), Observable {
         _inputMsg.value = null
     }
 
-
+    // Shoe detail two-way binding
     @Bindable
     var newShoe = Shoe(
         "",
@@ -58,6 +60,7 @@ class ShoeViewModel : ViewModel(), Observable {
             }
         }
 
+    // Add new shoe item
     fun addNewShoe() {
         newShoe.let {
             if (isValidateInputs()) {
@@ -77,6 +80,7 @@ class ShoeViewModel : ViewModel(), Observable {
         )
     }
 
+    // Shoe Detail Inputs validation
     private fun isValidateInputs(): Boolean {
         when {
             newShoe.name.isEmpty() -> {

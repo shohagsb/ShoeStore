@@ -2,19 +2,15 @@ package com.udacity.shoestore.shoe_list
 
 import android.os.Bundle
 import android.view.*
-import android.widget.LinearLayout
-import android.widget.TextView
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
-import androidx.navigation.ui.NavigationUI
 import com.udacity.shoestore.R
-import com.udacity.shoestore.ShoeViewModel
+import com.udacity.shoestore.viewmodel.ShoeViewModel
 import com.udacity.shoestore.databinding.FragmentShoeListBinding
 import com.udacity.shoestore.databinding.ItemShoeBinding
-import com.udacity.shoestore.models.Shoe
 
 
 class ShoeListFragment : Fragment() {
